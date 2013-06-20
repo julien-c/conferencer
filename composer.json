@@ -1,20 +1,20 @@
 {
-    "name": "anahkiasen/conferencer",
-    "description": "",
-    "authors": [
-        {
-            "name": "",
-            "email": ""
-        }
-    ],
-    "require": {
-        "php": ">=5.3.0",
-        "illuminate/support": "4.1.x"
-    },
-    "autoload": {
-        "psr-0": {
-            "Anahkiasen\\Conferencer": "src/"
-        }
-    },
-    "minimum-stability": "dev"
+	"name": "anahkiasen/conferencer",
+	"description": "A package to easily set-up conference-like websites",
+	"authors": [
+		{
+			"name": "Maxime Fabre",
+			"email": "ehtnam6@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0",
+		"illuminate/support": "4.1.x"
+	},
+	"autoload": {
+		"psr-0": {
+			"Conferencer": "src/"
+		}
+	},
+	"minimum-stability": "dev"
 }

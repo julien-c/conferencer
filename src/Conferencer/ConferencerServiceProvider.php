@@ -1,8 +1,10 @@
-<?php namespace Anahkiasen\Conferencer;
+<?php
+namespace Conferencer;
 
 use Illuminate\Support\ServiceProvider;
 
-class ConferencerServiceProvider extends ServiceProvider {
+class ConferencerServiceProvider extends ServiceProvider
+{
 
 	/**
 	 * Indicates if loading of the provider is deferred.

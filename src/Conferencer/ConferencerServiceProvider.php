@@ -22,6 +22,9 @@ class ConferencerServiceProvider extends ServiceProvider
 	{
     // Register config file
     $this->app['config']->package('anahkiasen/conferencer', __DIR__.'/../../config');
+
+    // Register routes
+    include __DIR__.'/../routes.php';
 	}
 
 	/**

@@ -41,7 +41,7 @@ class ArticlesController extends BaseController
 	public function getArticle($articleSlug)
 	{
 		$articles = Article::orderBy('created_at', 'asc')->get();
-		$article = Article::slugOrFail($articleSlug);
+		$article  = Article::slugOrFail($articleSlug);
 
 		return View::make('articles.article')
 			->with('articles', $articles)

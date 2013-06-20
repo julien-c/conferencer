@@ -66,9 +66,12 @@ class Speaker extends BaseModel
 	 */
 	public function relatedSpeakers()
 	{
+		// Get the talks from this speaker, find the other speakers of these talks
 		$talks    = array_pluck($this->talks->all(), 'id');
 		$speakers = DB::table('speaker_talk')->whereIn('talk_id', $talks)->lists('speaker_id');
 		$speakers = array_unique($speakers);
+
+		// Get all the speakers
 		unset($speakers[array_search($this->id, $speakers)]);
 		$speakers = Speaker::whereIn('id', array_unique($speakers))->get();
 
@@ -88,9 +91,20 @@ class Speaker extends BaseModel
 	{
 		$contact = array();
 
-		$contact['website']  = $this->website;
-		if ($this->facebook) $contact['facebook'] = 'http://www.facebook.com/'.$this->facebook;
-		if ($this->twitter) $contact['twitter']  = 'http://twitter.com/'.substr($this->twitter, 1);
+		// Add website
+		if ($this->website) {
+			$contact['website'] = $this->website;
+		}
+
+		// Add Facebook
+		if ($this->facebook) {
+			$contact['facebook'] = 'http://www.facebook.com/'.$this->facebook;
+		}
+
+		// Add Twitter
+		if ($this->twitter) {
+			$contact['twitter'] = 'http://twitter.com/'.substr($this->twitter, 1);
+		}
 
 		return $contact;
 	}

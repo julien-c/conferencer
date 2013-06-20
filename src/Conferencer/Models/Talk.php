@@ -146,10 +146,18 @@ class Talk extends BaseModel
 		}
 	}
 
+	/**
+	 * Get the Talk's related links
+	 *
+	 * @return array
+	 */
 	public function getInterestingLinksAttribute()
 	{
+		// Get the raw links
 		$links = $this->links;
 		$links = explode(PHP_EOL, $links);
+
+		// Transform them into links
 		foreach ($links as &$link) {
 			$link = explode(';', $link);
 			$link = (object) array(

@@ -57,7 +57,7 @@ abstract class BaseResource extends BaseController
 	public function __construct()
 	{
 		// Fetch the actual name of the Resource
-		$class = preg_replace('/Admin\\\(.+)Resource/', '$1', get_called_class());
+		$class = preg_replace('/Conferencer\\\Controllers\\\Admin\\\(.+)Resource/', '$1', get_called_class());
 
 		// Set up parameters
 		$this->namespace = strtolower($class);

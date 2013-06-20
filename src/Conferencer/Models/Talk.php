@@ -1,6 +1,10 @@
 <?php
 namespace Conferencer\Models;
 
+use Cache;
+use File;
+use View;
+
 class Talk extends BaseModel
 {
 

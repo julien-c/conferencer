@@ -10,6 +10,7 @@ use Conferencer\Models\Talk\Services as TalkServices;
 use File;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Request;
+use Talk;
 use View;
 
 class TalksController extends BaseController

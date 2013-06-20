@@ -20,7 +20,8 @@ class ConferencerServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		//
+    // Register config file
+    $this->app['config']->package('anahkiasen/conferencer', __DIR__.'/../../config');
 	}
 
 	/**

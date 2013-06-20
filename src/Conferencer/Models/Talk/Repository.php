@@ -2,6 +2,7 @@
 namespace Conferencer\Models\Talk;
 
 use Cache;
+use Config;
 use DB;
 use Talk;
 
@@ -22,16 +23,7 @@ class Repository
 	 */
 	public static function forHomepage()
 	{
-		$talks = array(
-			'presentation-shoot-the-moon',
-			'roundtable-driven-by-data',
-			'conversation-epidemics',
-			'presentation-by-design',
-			'fireside-inner-voices',
-			'keynote-energy-not-edifice',
-			'opening-roundtable-big-apple-circus',
-			'conversation-adapt-or-die',
-		);
+		$talks = Config::get('conferencer::home_talks');
 
 		return Talk::whereIn('slug', $talks);
 	}

@@ -1,13 +1,21 @@
 <?php
-namespace Conferencer;
+namespace Conferencer\Models;
 
+use Eloquent;
+use File;
+use Illuminage;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Str;
 
+/**
+ * A base model to share common methods and helpers
+ * across Conferencer's models
+ */
 class BaseModel extends Eloquent
 {
 
 	/**
-	 * Model validation rules
+	 * Base model validation rules
 	 *
 	 * @var array
 	 */
@@ -29,7 +37,9 @@ class BaseModel extends Eloquent
 	 */
 	public function getStripedAttribute($attribute, $words = 25)
 	{
-		return strip_tags(Str::words($this->$attribute, $words));
+		$attribute = Str::words($this->$attribute, $words);
+
+		return strip_tags($attribute);
 	}
 
 	/**

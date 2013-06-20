@@ -127,7 +127,7 @@ abstract class BaseResource extends BaseController
 			return $item;
 		}
 
-		return View::make('admin.'.$this->namespace.'.show')
+		return View::make('conferencer::admin.'.$this->namespace.'.show')
 			->with('item', $item);
 	}
 
@@ -140,7 +140,7 @@ abstract class BaseResource extends BaseController
 	{
 		Former::withRules($this->getRules());
 
-		return View::make('admin.' .$this->namespace. '.create');
+		return View::make('conferencer::admin.' .$this->namespace. '.create');
 	}
 
 	/**
@@ -179,7 +179,7 @@ abstract class BaseResource extends BaseController
 
 		Former::populate($item);
 
-		return View::make('admin.' .$this->namespace. '.create')
+		return View::make('conferencer::admin.' .$this->namespace. '.create')
 			->with('item', $item);
 	}
 

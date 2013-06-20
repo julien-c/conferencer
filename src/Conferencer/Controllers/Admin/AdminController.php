@@ -27,7 +27,7 @@ class AdminController extends BaseController
 	 */
 	public function getIndex()
 	{
-		return View::make('admin.index');
+		return View::make('conferencer::admin.index');
 	}
 
 	////////////////////////////////////////////////////////////////////
@@ -41,7 +41,7 @@ class AdminController extends BaseController
 	 */
 	public function getLogin()
 	{
-		return View::make('admin.login');
+		return View::make('conferencer::admin.login');
 	}
 
 	/**

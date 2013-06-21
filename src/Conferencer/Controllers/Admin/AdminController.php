@@ -55,10 +55,10 @@ class AdminController extends BaseController
 
 		// If attempt is successful, redirect
 		if (Auth::attempt($input)) {
-			return Redirect::action('Admin\AdminController@getIndex');
+			return Redirect::action('Conferencer\Controllers\Admin\AdminController@getIndex');
 		}
 
-		return Redirect::action('Admin\AdminController@getLogin')
+		return Redirect::action('Conferencer\Controllers\Admin\AdminController@getLogin')
 			->with('error', true)
 			->withInput();
 	}

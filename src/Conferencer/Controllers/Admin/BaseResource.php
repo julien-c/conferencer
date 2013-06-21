@@ -83,7 +83,7 @@ abstract class BaseResource extends BaseController
 		$items = $this->object->with($this->relations)->get();
 		$view = View::exists('admin.' .$this->namespace. '.index')
 			? 'admin.' .$this->namespace. '.index'
-			: 'partials.admin.index';
+			: 'conferencer::partials.admin.index';
 
 		// Fetch columns to display
 		if (isset($items[0])) {

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('conferencer::layouts.admin')
 
 @section('content')
 	<p>&laquo; {{ HTML::linkRoute('admin.articles.index', 'Back to the list of articles') }}</p>
@@ -12,7 +12,7 @@
 		@endif
 
 		{{ Former::text('name') }}
-		@include('partials.admin.toolbar')
+		@include('conferencer::partials.admin.toolbar')
 		{{ Former::textarea('content')->addClass('textarea--large')->id('wysihtml5-textarea') }}
 
 		{{-- Actions --}}

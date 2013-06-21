@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('conferencer::layouts.admin')
 
 @section('content')
 	<p>&laquo; {{ HTML::linkRoute('admin.tags.index', 'Back to the list of tags') }}</p>

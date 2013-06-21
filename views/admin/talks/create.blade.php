@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('conferencer::layouts.admin')
 
 @section('content')
 	<p>&laquo; {{ HTML::linkRoute('admin.talks.index', 'Back to the list of talks') }}</p>
@@ -14,7 +14,7 @@
 		<h3>Informations</h3>
 		{{ Former::text('name') }}
 		{{ Former::text('subname') }}
-		@include('partials.admin.toolbar')
+		@include('conferencer::partials.admin.toolbar')
 		{{ Former::textarea('description')->addClass('textarea--large')->id('wysihtml5-textarea') }}
 
 		{{ Former::legend('Dates') }}

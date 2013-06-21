@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('conferencer::layouts.admin')
 
 @section('content')
 	Welcome, {{ Auth::user()->username }}.

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('conferencer::layouts.admin')
 
 @section('content')
 	<p>&laquo; {{ HTML::linkRoute('admin.partners.index', 'Back to the list of partners') }}</p>
@@ -16,7 +16,7 @@
 			'classic' => 'Partner',
 			'media'   => 'Media partner',
 		)) }}
-		@include('partials.admin.toolbar')
+		@include('conferencer::partials.admin.toolbar')
 		{{ Former::textarea('description')->addClass('textarea--large')->id('wysihtml5-textarea') }}
 		@if (isset($item) and $item->image)
 		{{ Former::group('Current image') }}

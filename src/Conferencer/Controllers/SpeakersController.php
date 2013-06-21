@@ -27,7 +27,7 @@ class SpeakersController extends BaseController
 			return $response;
 		}
 
-		return View::make('speakers.speakers')
+		return View::make('conferencer::speakers.speakers')
 			->with('speakers', $speakers);
 	}
 
@@ -41,7 +41,7 @@ class SpeakersController extends BaseController
 		$speaker = Speaker::slugOrFail($speakerSlug);
 		$speaker->load('talks', 'talks.tags');
 
-		return View::make('speakers.speaker')
+		return View::make('conferencer::speakers.speaker')
 			->with('speaker', $speaker);
 	}
 

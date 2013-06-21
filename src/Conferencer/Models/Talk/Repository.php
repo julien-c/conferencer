@@ -96,9 +96,7 @@ class Repository
 	public static function sanitizeYear($year = null)
 	{
 		$years = static::getYears();
-		if (!$year or !in_array($year, $years)) {
-			$year = end($years);
-		}
+		if (!$year) $year = end($years);
 
 		return $year;
 	}

@@ -58,14 +58,11 @@ class TalksController extends BaseController
 		// Get month
 		$lastDay = array_keys($program);
 		$lastDay = end($lastDay);
-		$month   = $program[$lastDay][0]->from->format('m');
+		$month   = $lastDay ? $program[$lastDay][0]->from->format('m') : 0;
 
-		// Get view
-		if (in_array($year, range(2009, 2011))) {
-			$view = 'talks.program-'.$year;
-		} else {
-			$view = 'talks.program';
-		}
+		$view = View::exists('talks.program-'.$year)
+			? 'talks.program-'.$year
+			: 'conferencer::talks.program';
 
 		return View::make($view, array(
 			'years'   => $years,
@@ -95,7 +92,7 @@ class TalksController extends BaseController
 
 			// Create view
 			$talks   = Talk::whereYear($year)->orderBy('from', 'ASC')->get();
-			$program = View::make('talks.program-pdf')
+			$program = View::make('conferencer::talks.program-pdf')
 				->with('talks', $talks)
 				->with('year', $year);
 
@@ -118,7 +115,7 @@ class TalksController extends BaseController
 	{
 		$talk = Talk::slugOrFail($talkSlug);
 
-		return View::make('talks.talk')
+		return View::make('conferencer::talks.talk')
 			->with('talk', $talk);
 	}
 

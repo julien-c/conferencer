@@ -15,7 +15,7 @@ class ArticlesController extends BaseController
 	{
 		$articles = Article::orderBy('created_at', 'desc')->get();
 
-		return View::make('articles.articles')
+		return View::make('conferencer::articles.articles')
 			->with('articles', $articles);
 	}
 
@@ -28,7 +28,7 @@ class ArticlesController extends BaseController
 	{
 		$articles = Article::where('created_at', 'LIKE', $date.'%')->get();
 
-		return View::make('articles.articles')
+		return View::make('conferencer::articles.articles')
 			->with('thisDate', $date)
 			->with('articles', $articles);
 	}
@@ -43,7 +43,7 @@ class ArticlesController extends BaseController
 		$articles = Article::orderBy('created_at', 'asc')->get();
 		$article  = Article::slugOrFail($articleSlug);
 
-		return View::make('articles.article')
+		return View::make('conferencer::articles.article')
 			->with('articles', $articles)
 			->with('article', $article);
 	}

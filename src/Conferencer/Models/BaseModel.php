@@ -100,7 +100,11 @@ class BaseModel extends Eloquent
 	{
 		if (!$height) $height = $width;
 
-		// return \HtmlObject\Element::div();
+		// Fallback
+		if (!$this->imagePath) {
+			return new \HtmlObject\Image($this->image);
+		}
+
 		return Illuminage::thumb($this->imagePath, $width, $height);
 	}
 

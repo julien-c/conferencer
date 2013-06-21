@@ -27,6 +27,7 @@ class ConferencerServiceProvider extends ServiceProvider
 		$this->app['view']->addNamespace('conferencer', __DIR__.'/../../views');
 
 		// Register Routes and View composers
+		include __DIR__.'/../assets.php';
 		include __DIR__.'/../composers.php';
 		include __DIR__.'/../routes.php';
 	}

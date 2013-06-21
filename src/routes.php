@@ -1,4 +1,10 @@
 <?php
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
+App::error(function(ModelNotFoundException $e) {
+	return View::make('404')
+		->with('e', $e);
+});
 
 // Aliases --------------------------------------------------------- /
 
@@ -27,10 +33,10 @@ Route::controller('articles', 'Conferencer\Controllers\ArticlesController');
 Route::controller('speakers', 'Conferencer\Controllers\SpeakersController');
 Route::controller('talks',    'Conferencer\Controllers\TalksController');
 
-Route::resource('admin/articles',   'Conferencer\Controllers\Admin\ArticlesResource');
-Route::resource('admin/speakers',   'Conferencer\Controllers\Admin\SpeakersResource');
-Route::resource('admin/partners',   'Conferencer\Controllers\Admin\PartnersResource');
-Route::resource('admin/tags',       'Conferencer\Controllers\Admin\TagsResource');
-Route::resource('admin/talks',      'Conferencer\Controllers\Admin\TalksResource');
+Route::resource('admin/articles', 'Conferencer\Controllers\Admin\ArticlesResource');
+Route::resource('admin/speakers', 'Conferencer\Controllers\Admin\SpeakersResource');
+Route::resource('admin/partners', 'Conferencer\Controllers\Admin\PartnersResource');
+Route::resource('admin/tags',     'Conferencer\Controllers\Admin\TagsResource');
+Route::resource('admin/talks',    'Conferencer\Controllers\Admin\TalksResource');
 
 Route::controller('admin', 'Conferencer\Controllers\Admin\AdminController');

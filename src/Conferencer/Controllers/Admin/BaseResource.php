@@ -10,8 +10,8 @@ use Redirect;
 use Request;
 use Response;
 use Str;
-use View;
 use Validator;
+use View;
 
 /**
  * An abstract resource with precreated Restful interactions

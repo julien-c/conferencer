@@ -1,6 +1,7 @@
 {
 	"name": "anahkiasen/conferencer",
 	"description": "A package to easily set-up conference-like websites",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Maxime Fabre",
@@ -10,7 +11,8 @@
 	"require": {
 		"php": ">=5.3.0",
 		"illuminate/support": "4.1.x",
-		"anahkiasen/illuminage": "dev-master"
+		"anahkiasen/illuminage": "dev-master",
+		"anahkiasen/former": "dev-agnostic"
 	},
 	"autoload": {
 		"psr-0": {

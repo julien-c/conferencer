@@ -1,0 +1,83 @@
+// Modules
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+%reset-margins {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+
+// Has many data module -------------------------------------------- /
+
+.has-many {
+	@extend %reset-margins;
+	@include rem(margin-bottom, 1rem);
+
+	li {
+		@include rem(max-width, 10rem);
+		@include rem(margin-bottom, .5rem);
+		@include rem(padding, .3rem .5rem);
+		position: relative;
+
+		&:hover {
+			background: $color-red;
+		}
+
+		a {
+			position: absolute;
+			@include rem(right, .5rem);
+			color: white;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// WYSIHTML5 ------------------------------------------------------- /
+
+.wysihtml5-sandbox {
+	width: 90% !important;
+}
+
+#wysihtml5-toolbar .modal {
+	@include rem(padding, .75rem);
+	top: 25%;
+
+	label {
+		float: left;
+
+		input {
+			@include rem(margin-left, .5rem);
+		}
+	}
+
+	.btn {
+		float: right;
+		@include rem(margin-right, 1rem);
+	}
+}
+
+// Tables ---------------------------------------------------------- /
+
+.table th {
+	&.tablesorter-headerAsc,
+	&.tablesorter-headerDesc, {
+		background-color: $color-red;
+		color: white;
+		&:hover {
+			background-color: lighten($color-red, 5);
+		}
+	}
+
+	&.tablesorter-headerAsc div:before {
+		content: "\25B2";
+		@include rem(margin-right, 0.5rem);
+	}
+	&.tablesorter-headerDesc div:before {
+		content: "\25BC";
+		@include rem(margin-right, 0.5rem);
+	}
+}

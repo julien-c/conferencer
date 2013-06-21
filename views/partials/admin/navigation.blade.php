@@ -1,5 +1,5 @@
 <nav class="layout-admin-navigation">
-	<ul>
+	<ul class="inline">
 		<li>{{ HTML::linkRoute('admin.talks.index', 'Talks') }}</li>
 		<li>{{ HTML::linkRoute('admin.speakers.index', 'Speakers') }}</li>
 		<li>{{ HTML::linkRoute('admin.articles.index', 'Articles') }}</li>

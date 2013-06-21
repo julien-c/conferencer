@@ -1,0 +1,46 @@
+// Scaffolding
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Typography ------------------------------------------------------ /
+
+%font-headings {
+	color: $color-red;
+	font-family: $font-main;
+	font-weight: 900;
+}
+
+%font-main {
+	font-weight: 600;
+	font-family: $font-main;
+}
+
+body {
+	background: image-url('shattered.png');
+	@extend %font-main;
+}
+
+a {
+	color: $color-red;
+}
+
+// Forms and inputs ------------------------------------------------ /
+
+textarea {
+	@include rem(height, 15rem);
+	@include rem(padding, 2rem);
+	@include rem(width, 40rem);
+	max-width: 100%;
+
+	&.textarea--large {
+		@include rem(height, 35rem);
+		@include rem(width, 80rem);
+		max-width: 90%;
+	}
+}
+
+input[type="text"],
+input[type="password"] {
+	box-sizing: content-box;
+}

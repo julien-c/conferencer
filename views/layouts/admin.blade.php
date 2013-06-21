@@ -9,7 +9,8 @@
 @stop
 
 @section('layout')
-	<section class="layout-container layout-container--admin">
+	<section class="container-fluid layout-container--admin">
+
 		@if (Auth::check())
 			<h2>
 				Administration
@@ -25,6 +26,7 @@
 			@yield('content')
 		</main>
 		@yield('container-after')
+
 	</section>
 @stop
 

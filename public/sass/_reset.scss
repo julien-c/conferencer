@@ -1,0 +1,62 @@
+// Bootstrap resets
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Buttons
+//////////////////////////////////////////////////////////////////////
+
+.btn {
+
+	// Variables
+	$base-color: hsl(210, 28%, 28%);
+
+	// Properties
+	@include transition(.3s all);
+
+	// Appearance
+	@include box-shadow(none);
+	@include text-shadow(none);
+	background: $base-color;
+	border: none;
+
+	// Text
+	color: white;
+	font-family: $font-main;
+	font-weight: 600;
+
+	// Variations ---------------------------------------------------- /
+
+	&:hover {
+		background-color: lighten($base-color, 10);
+		color: white;
+	}
+
+	&.btn-primary {
+		background: $color-red;
+		&:hover {
+			background-color: lighten($color-red, 10);
+		}
+	}
+}
+
+// Forms
+//////////////////////////////////////////////////////////////////////
+
+input[type=text],
+label,
+legend {
+	font-family: $font-main;
+	@include rem(font-size, 1rem);
+}
+
+legend {
+	@include rem(font-size, 1.5rem);
+}
+
+// Tables
+//////////////////////////////////////////////////////////////////////
+
+.table {
+	background-color: white;
+}

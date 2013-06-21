@@ -1,0 +1,167 @@
+.btn {
+  -webkit-transition: 0.3s all;
+  -moz-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  background: #33475b;
+  border: none;
+  color: white;
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  font-weight: 600; }
+  .btn:hover {
+    background-color: #46617c;
+    color: white; }
+  .btn.btn-primary {
+    background: #f04242; }
+    .btn.btn-primary:hover {
+      background-color: #f47171; }
+
+input[type=text],
+label,
+legend {
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1rem; }
+
+legend {
+  font-size: 24px;
+  font-size: 1.5rem; }
+
+.table {
+  background-color: white; }
+
+body {
+  font-weight: 600;
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif; }
+
+body {
+  background: url('../img/shattered.png?1371827956'); }
+
+a {
+  color: #f04242; }
+
+textarea {
+  height: 240px;
+  height: 15rem;
+  padding: 32px;
+  padding: 2rem;
+  width: 640px;
+  width: 40rem;
+  max-width: 100%; }
+  textarea.textarea--large {
+    height: 560px;
+    height: 35rem;
+    width: 1280px;
+    width: 80rem;
+    max-width: 90%; }
+
+input[type="text"],
+input[type="password"] {
+  box-sizing: content-box; }
+
+.layout-container--admin {
+  padding-left: 64px;
+  padding-left: 4rem;
+  padding-right: 64px;
+  padding-right: 4rem;
+  padding-top: 32px;
+  padding-top: 2rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: auto;
+  max-width: 75%; }
+  @media (max-width: 90em) {
+    .layout-container--admin {
+      width: 95%;
+      max-width: 95%;
+      padding-left: 32px;
+      padding-left: 2rem;
+      padding-right: 32px;
+      padding-right: 2rem; } }
+
+.layout-admin-navigation {
+  margin-bottom: 48px;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid grey(85); }
+  .layout-admin-navigation ul li {
+    margin: 0;
+    padding: 0;
+    text-align: center; }
+    .layout-admin-navigation ul li a {
+      -moz-border-radius-topleft: 0.25em;
+      -webkit-border-top-left-radius: 0.25em;
+      border-top-left-radius: 0.25em;
+      -moz-border-radius-topright: 0.25em;
+      -webkit-border-top-right-radius: 0.25em;
+      border-top-right-radius: 0.25em;
+      padding: 8px 16px;
+      padding: 0.5rem 1rem;
+      background-color: white;
+      display: block; }
+      .layout-admin-navigation ul li a:hover {
+        background-color: #f04242;
+        color: white;
+        text-decoration: none; }
+
+.has-many {
+  margin: 0;
+  padding: 0;
+  line-height: 1; }
+
+.has-many {
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+  .has-many li {
+    max-width: 160px;
+    max-width: 10rem;
+    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
+    padding: 5px 8px;
+    padding: 0.3rem 0.5rem;
+    position: relative; }
+    .has-many li:hover {
+      background: #f04242; }
+    .has-many li a {
+      position: absolute;
+      right: 8px;
+      right: 0.5rem;
+      color: white; }
+      .has-many li a:hover {
+        text-decoration: none; }
+
+.wysihtml5-sandbox {
+  width: 90% !important; }
+
+#wysihtml5-toolbar .modal {
+  padding: 12px;
+  padding: 0.75rem;
+  top: 25%; }
+  #wysihtml5-toolbar .modal label {
+    float: left; }
+    #wysihtml5-toolbar .modal label input {
+      margin-left: 8px;
+      margin-left: 0.5rem; }
+  #wysihtml5-toolbar .modal .btn {
+    float: right;
+    margin-right: 16px;
+    margin-right: 1rem; }
+
+.table th.tablesorter-headerAsc, .table th.tablesorter-headerDesc {
+  background-color: #f04242;
+  color: white; }
+  .table th.tablesorter-headerAsc:hover, .table th.tablesorter-headerDesc:hover {
+    background-color: #f25a5a; }
+.table th.tablesorter-headerAsc div:before {
+  content: "\25B2";
+  margin-right: 8px;
+  margin-right: 0.5rem; }
+.table th.tablesorter-headerDesc div:before {
+  content: "\25BC";
+  margin-right: 8px;
+  margin-right: 0.5rem; }

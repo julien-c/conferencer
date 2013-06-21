@@ -1,0 +1,52 @@
+// Layout
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Container ------------------------------------------------------- /
+
+.layout-container--admin {
+	@include rem(padding-left, 4rem);
+	@include rem(padding-right, 4rem);
+	@include rem(padding-top, 2rem);
+	@include box-sizing(border-box);
+	background-color: rgba(white, .85);
+	margin: auto;
+	max-width: 75%;
+
+	@include at-breakpoint(0 90em) {
+		width: 95%;
+		max-width: 95%;
+		@include rem(padding-left, 2rem);
+		@include rem(padding-right, 2rem);
+	}
+}
+
+// Navigation ------------------------------------------------------ /
+
+.layout-admin-navigation {
+	@include rem(margin-bottom, 3rem);
+	border-bottom: 1px solid grey(85);
+	ul {
+
+		li {
+			margin: 0;
+			padding: 0;
+			text-align: center;
+
+			a {
+				@include border-top-radius(.25em);
+				@include rem(padding, .5rem 1rem);
+				background-color: white;
+				display: block;
+
+				&:hover {
+					background-color: $color-red;
+					color: white;
+					text-decoration: none;
+				}
+			}
+
+		}
+	}
+}

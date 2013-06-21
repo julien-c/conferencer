@@ -1,0 +1,14 @@
+@import "compass";
+@import "susy";
+
+// Helpers --------------------------------------------------------- /
+
+$color-red : hsl(360, 85%, 60%);
+$font-main : "proxima-nova", Helvetica, Arial, sans-serif;
+
+// Imports---------------------------------------------------------- /
+
+@import "reset";
+@import "scaffolding";
+@import "layout";
+@import "modules";

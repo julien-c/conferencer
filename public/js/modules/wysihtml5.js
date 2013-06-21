@@ -90,22 +90,17 @@
 				return false;
 			}
 
-			embed = $("<object width='700' height='525'>
-				<param
-					name='flashvars'
-					value='offsite=true&lang=en-us&page_show_url=%2Fphotos%2Fanahkiasen%2Fsets%2F" +set+ "%2Fshow%2Fwith%2F6930229569%2F&page_show_back_url=%2Fphotos%2Fanahkiasen%2Fsets%2F" +set+ "%2Fwith%2F6930229569%2F&set_id=" +set+ "&jump_to=6930229569'></param>
-				<param
-					name='movie'
-					value='http://www.flickr.com/apps/slideshow/show.swf?v=124984'></param>
-				<param
-					name='allowFullScreen'
-					value='true'></param>
-				<embed
-					type='application/x-shockwave-flash'
-					src='http://www.flickr.com/apps/slideshow/show.swf?v=124984'
-					allowFullScreen='true'
-					flashvars='offsite=true&lang=en-us&page_show_url=%2Fphotos%2Fanahkiasen%2Fsets%2F" +set+ "%2Fshow%2Fwith%2F6930229569%2F&page_show_back_url=%2Fphotos%2Fanahkiasen%2Fsets%2F" +set+ "%2Fwith%2F6930229569%2F&set_id=" +set+ "&jump_to=6930229569' width='700' height='525'></embed>
-			</object>");
+			embed = $(
+			"<object width='700' height='525'>"+
+			"	<param name='flashvars'"+
+			"		value='offsite=true&lang=en-us&page_show_url=%2Fphotos%2Fanahkiasen%2Fsets%2F" +set+ "%2Fshow%2Fwith%2F6930229569%2F&page_show_back_url=%2Fphotos%2Fanahkiasen%2Fsets%2F" +set+ "%2Fwith%2F6930229569%2F&set_id=" +set+ "&jump_to=6930229569'></param>"+
+			"	<param name='movie' "+
+			"		value='http://www.flickr.com/apps/slideshow/show.swf?v=124984'></param>"+
+			"	<param name='allowFullScreen' "+
+			"		value='true'></param>"+
+			"	<embed type='application/x-shockwave-flash' src='http://www.flickr.com/apps/slideshow/show.swf?v=124984' allowFullScreen='true' "+
+			"		flashvars='offsite=true&lang=en-us&page_show_url=%2Fphotos%2Fanahkiasen%2Fsets%2F" +set+ "%2Fshow%2Fwith%2F6930229569%2F&page_show_back_url=%2Fphotos%2Fanahkiasen%2Fsets%2F" +set+ "%2Fwith%2F6930229569%2F&set_id=" +set+ "&jump_to=6930229569' width='700' height='525'></embed>"+
+			"</object>");
 
 			return composer.selection.insertNode(embed[0]);
 		}

@@ -2,9 +2,9 @@
 namespace Conferencer\Models\Talk;
 
 use Cache;
+use Conferencer\Models\Talk;
 use Config;
 use DB;
-use Talk;
 
 class Repository
 {

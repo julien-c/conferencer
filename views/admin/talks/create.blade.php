@@ -4,10 +4,10 @@
 	<p>&laquo; {{ HTML::linkRoute('admin.talks.index', 'Back to the list of talks') }}</p>
 
 		@if (isset($item))
-			{{ Former::horizontal_open_for_files(URL::route('admin.talks.update', $item->id))->rules(Talk::$rules)->method('PUT') }}
+			{{ Former::horizontal_open_for_files(URL::route('admin.talks.update', $item->id))->method('PUT') }}
 			{{ Former::legend('Modify talk "' .$item->name. '"') }}
 		@else
-			{{ Former::horizontal_open_for_files(URL::route('admin.talks.store'))->rules(Talk::$rules) }}
+			{{ Former::horizontal_open_for_files(URL::route('admin.talks.store')) }}
 			{{ Former::legend('Create a talk') }}
 		@endif
 
@@ -38,7 +38,7 @@
 								</li>
 							@endforeach
 					</ul>
-					{{ Former::select('tag')->fromQuery(Tag::orderBy('name', 'ASC')->get())->raw() }}
+					{{ Former::select('tag')->fromQuery(Conferencer\Models\Tag::orderBy('name', 'ASC')->get())->raw() }}
 					{{ Former::primary_button('Add')->data_url(URL::action('Conferencer\Controllers\Admin\TalksResource@addTag', array($item->id, 0)))->addClass('has-many__add') }}
 				</div>
 			{{ Former::closeGroup() }}
@@ -54,7 +54,7 @@
 								</li>
 							@endforeach
 					</ul>
-					{{ Former::select('speaker')->fromQuery(Speaker::orderBy('name', 'ASC')->get())->raw() }}
+					{{ Former::select('speaker')->fromQuery(Conferencer\Models\Speaker::orderBy('name', 'ASC')->get())->raw() }}
 					{{ Former::primary_button('Add')->data_url(URL::action('Conferencer\Controllers\Admin\TalksResource@addSpeaker', array($item->id, 0)))->addClass('has-many__add') }}
 				</div>
 			{{ Former::closeGroup() }}

@@ -5,13 +5,13 @@ use App;
 use BaseController;
 use Cache;
 use Conferencer\Models\Tag;
+use Conferencer\Models\Talk;
 use Conferencer\Models\Talk\Repository as TalkRepository;
 use Conferencer\Models\Talk\Services as TalkServices;
 use Config;
 use File;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Request;
-use Talk;
 use View;
 
 class TalksController extends BaseController

@@ -33,7 +33,7 @@ class Tag extends BaseModel
 	 */
 	public function talks()
 	{
-		return $this->belongsToMany('Talk');
+		return $this->belongsToMany('Conferencer\Models\Talk');
 	}
 
 	/**

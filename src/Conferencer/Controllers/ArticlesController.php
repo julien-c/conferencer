@@ -1,7 +1,8 @@
 <?php
 namespace Conferencer\Controllers;
 
-use Article;
+use Conferencer\Models\Article;
+use Conferencer\Models\Article\Repository as ArticleRepository;
 use BaseController;
 use View;
 
@@ -14,8 +15,10 @@ class ArticlesController extends BaseController
 	public function getIndex()
 	{
 		$articles = Article::orderBy('created_at', 'desc')->get();
+		$calendar = ArticleRepository::getCalendar();
 
 		return View::make('conferencer::articles.articles')
+			->with('calendar', $calendar)
 			->with('articles', $articles);
 	}
 

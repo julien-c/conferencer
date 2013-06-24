@@ -61,7 +61,7 @@ abstract class BaseResource extends BaseController
 
 		// Set up parameters
 		$this->namespace = strtolower($class);
-		$this->model     = ucfirst(Str::singular($this->namespace));
+		$this->model     = 'Conferencer\Models\\'.ucfirst(Str::singular($this->namespace));
 		$this->object    = new $this->model;
 
 		// Set up filters
@@ -178,6 +178,7 @@ abstract class BaseResource extends BaseController
 		$item = $this->object->with($this->relations)->where('id', $id)->firstOrFail();
 
 		Former::populate($item);
+		Former::withRules($this->getRules());
 
 		return View::make('conferencer::admin.' .$this->namespace. '.create')
 			->with('item', $item);

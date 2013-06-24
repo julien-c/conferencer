@@ -1,7 +1,7 @@
 <?php
 namespace Conferencer\Models\Talk;
 
-use Talk;
+use Conferencer\Models\Talk;
 
 class Services
 {

@@ -1,8 +1,8 @@
 <?php
 namespace Conferencer\Models\Speaker;
 
-use Speaker;
-use Talk;
+use Conferencer\Models\Speaker;
+use Conferencer\Models\Talk;
 
 class Services
 {

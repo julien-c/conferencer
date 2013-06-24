@@ -3,7 +3,7 @@ namespace Conferencer\Models;
 
 use Eloquent;
 use File;
-use Illuminage;
+use Illuminage\Facades\Illuminage;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Str;
 

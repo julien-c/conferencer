@@ -41,7 +41,7 @@ class Speaker extends BaseModel
 	 */
 	public function talks()
 	{
-		return $this->belongsToMany('Talk')->orderBy('from', 'asc');
+		return $this->belongsToMany('Conferencer\Models\Talk')->orderBy('from', 'asc');
 	}
 
 	/**
@@ -73,7 +73,7 @@ class Speaker extends BaseModel
 
 		// Get all the speakers
 		unset($speakers[array_search($this->id, $speakers)]);
-		$speakers = Speaker::whereIn('id', array_unique($speakers))->get();
+		$speakers = static::whereIn('id', array_unique($speakers))->get();
 
 		return $speakers;
 	}

@@ -35,7 +35,7 @@
 			@endif
 				{{ HTML::link(
 					'#'.$year.'-'.$month.'-'.$thisDay,
-					Carbon::create($year, $month, $thisDay)->toFormattedDateString()) }}
+					Carbon\Carbon::create($year, $month, $thisDay)->toFormattedDateString()) }}
 			</li>
 		@endforeach
 	</ul>
@@ -44,7 +44,7 @@
 	@foreach ($program as $date => $talks)
 		<section id="{{ $date }}" class="tab-pane <?php if ($date == $year.'-'.$month.'-'.$day) echo "active" ?> program">
 			<h2 class="block-title">
-				{{ Carbon::createFromFormat('Y-m-d', $date)->format('l, d M Y') }}
+				{{ Carbon\Carbon::createFromFormat('Y-m-d', $date)->format('l, d M Y') }}
 			</h2>
 			<p class="content-list__empty alert alert-info">There is no talk matching the selected filters</p>
 			<div class=" content-list">

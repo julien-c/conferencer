@@ -7,7 +7,7 @@
 @section('aside')
 	<h3>Archives</h3>
 	<ul class="calendar">
-	@foreach (ArticleRepository::getCalendar() as $year => $months)
+	@foreach ($calendar as $year => $months)
 		<li>{{ $year }}
 		<ul>
 		@foreach ($months as $month => $days)

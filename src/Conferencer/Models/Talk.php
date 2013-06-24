@@ -43,7 +43,7 @@ class Talk extends BaseModel
 	 */
 	public function speakers()
 	{
-		return $this->belongsToMany('Speaker');
+		return $this->belongsToMany('Conferencer\Models\Speaker');
 	}
 
 	/**
@@ -53,7 +53,7 @@ class Talk extends BaseModel
 	 */
 	public function tags()
 	{
-		return $this->belongsToMany('Tag');
+		return $this->belongsToMany('Conferencer\Models\Tag');
 	}
 
 	/**

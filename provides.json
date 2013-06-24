@@ -1,0 +1,15 @@
+{
+  "providers": [
+    "Conferencer\ConferencerServiceProvider"
+  ],
+  "aliases": [
+    {
+      "alias": "Basset",
+      "facade": "Basset\Facade"
+    },
+    {
+      "alias": "Former",
+      "facade": "Former\Facades\Illuminate"
+    }
+  ]
+}

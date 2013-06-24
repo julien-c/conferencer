@@ -1,7 +1,7 @@
 <?php
 namespace Conferencer\Models\Article;
 
-use Article;
+use Conferencer\Models\Article;
 
 class Repository
 {

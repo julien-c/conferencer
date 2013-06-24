@@ -1,4 +1,4 @@
-@extends('layouts.internal')
+@extends('layouts.classic')
 
 @section('title')
 	@lang('navigation.program') {{ $year }} -

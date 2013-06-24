@@ -1,4 +1,4 @@
-@extends('layouts.internal')
+@extends($layout)
 
 @section('title')
 	@lang('navigation.news') -
@@ -29,7 +29,9 @@
 	</ul>
 
 	<h3>On Twitter</h3>
-	@include('partials.twitter-timeline')
+	@if (View::exists('partials.twitter-timeline'))
+		@include('partials.twitter-timeline')
+	@endif
 @stop
 
 @section('container-before')

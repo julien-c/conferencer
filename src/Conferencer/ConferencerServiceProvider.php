@@ -26,6 +26,10 @@ class ConferencerServiceProvider extends ServiceProvider
 
 		// Register views
 		$this->app['view']->addNamespace('conferencer', __DIR__.'/../../views');
+
+		// Share global variables
+		$this->app['view']->share('layout',  $this->app['view']->exists('layouts.classic') ? 'layouts.classic' : 'conferencer::layouts.classic');
+		$this->app['view']->share('website', $this->app['config']->get('conferencer::website'));
 	}
 
 	/**

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>@yield('title'){{ $title }}</title>
+	<title>@yield('title'){{ $website }}</title>
 	<meta name="viewport" content="width=device-width">
 	<link href="{{ URL::asset('app/img/favicon.png') }}" rel="shortcut icon"/>
 	{{ HTML::script('packages/anahkiasen/conferencer/js/modernizr.min.js') }}

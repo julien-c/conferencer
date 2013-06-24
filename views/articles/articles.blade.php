@@ -1,4 +1,4 @@
-@extends($layout)
+@extends($layoutClassic)
 
 @section('title')
 	@lang('navigation.news') -

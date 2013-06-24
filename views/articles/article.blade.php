@@ -1,4 +1,4 @@
-@extends('layouts.unicol')
+@extends($layoutUnicol)
 
 @section('title')
 	{{ $article->name }} -

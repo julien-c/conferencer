@@ -28,7 +28,8 @@ class ConferencerServiceProvider extends ServiceProvider
 		$this->app['view']->addNamespace('conferencer', __DIR__.'/../../views');
 
 		// Share global variables
-		$this->app['view']->share('layout',  $this->app['view']->exists('layouts.classic') ? 'layouts.classic' : 'conferencer::layouts.classic');
+		$this->app['view']->share('layoutClassic', $this->getView('layouts.classic'));
+		$this->app['view']->share('layoutUnicol',  $this->getView('layouts.unicol'));
 		$this->app['view']->share('website', $this->app['config']->get('conferencer::website'));
 	}
 
@@ -68,6 +69,22 @@ class ConferencerServiceProvider extends ServiceProvider
 	public function provides()
 	{
 		return array('conferencer');
+	}
+
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////////// HELPERS ////////////////////////////
+	////////////////////////////////////////////////////////////////////
+
+	/**
+	 * Get an User defined view, or the fallback one
+	 *
+	 * @param  string $view
+	 *
+	 * @return string
+	 */
+	protected function getView($view)
+	{
+		return $this->app['view']->exists($view) ? $view : 'conferencer::'.$view;
 	}
 
 }

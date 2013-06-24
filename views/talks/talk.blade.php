@@ -1,4 +1,4 @@
-@extends('layouts.classic')
+@extends($layoutClassic)
 
 @section('title')
 	{{ $talk->name }} -

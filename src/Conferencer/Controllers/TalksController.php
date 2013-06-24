@@ -36,7 +36,7 @@ class TalksController extends BaseController
 			return $response.'</article>';
 		}
 
-		return View::make('results')
+		return View::make('conferencer::results')
 			->with('talks', $talks);
 	}
 
@@ -135,7 +135,7 @@ class TalksController extends BaseController
 		$talks    = $tag->talks;
 		$speakers = $tag->speakers();
 
-		return View::make('results')
+		return View::make('conferencer::results')
 			->with('talks', $talks)
 			->with('speakers', $speakers)
 			->with('tag', $tag);

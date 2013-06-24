@@ -1,6 +1,7 @@
 <?php
 namespace Conferencer;
 
+use Blade;
 use HTML;
 use Illuminate\Support\ServiceProvider;
 
@@ -47,6 +48,16 @@ class ConferencerServiceProvider extends ServiceProvider
 		include __DIR__.'/../assets.php';
 		include __DIR__.'/../composers.php';
 		include __DIR__.'/../routes.php';
+
+		// Register custom Blade @include
+		Blade::extend(function($view, $blade) {
+			$pattern = $blade->createMatcher('includeFallback');
+			$replace = PHP_EOL.'@if (View::exists$2)'.PHP_EOL.'@include$2'.PHP_EOL.'@else'.PHP_EOL.'@include$2'.PHP_EOL.'@endif';
+			$view = preg_replace($pattern, $replace, $view);
+			$view = str_replace("@else".PHP_EOL."@include('", "@else".PHP_EOL."@include('conferencer::", $view);
+
+				return $view;
+		});
 	}
 
 	/**

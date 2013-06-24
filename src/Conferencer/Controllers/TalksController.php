@@ -85,7 +85,7 @@ class TalksController extends BaseController
 
 		$output = App::make('path.public').'/app/pdf/'.Config::get('conferencer::pdfs').'-' .$year. '.pdf';
 
-		Cache::remember('program-'.$year, $cacheTime, function() use($year, $output) {
+		Cache::remember('program-'.$year, $cacheTime, function() use ($year, $output) {
 
 			// Create TCPDF instance
 			File::delete($output);

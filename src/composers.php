@@ -45,8 +45,8 @@ View::composer('conferencer::partials.admin.toolbar', function($view) {
 	);
 
 	// Compose toolbars
-	foreach($tools as $group => $buttons) {
-		foreach($buttons as $command => $name) {
+	foreach ($tools as $group => $buttons) {
+		foreach ($buttons as $command => $name) {
 			if (Str::contains($command, '.')) {
 				list($command, $block) = explode('.', $command);
 				$toolbars[$group][$name] = array(

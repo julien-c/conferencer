@@ -119,7 +119,7 @@ class Talk extends BaseModel
 	 */
 	public function getYoutubeEmbedAttribute()
 	{
-		return View::make('partials.talk-youtube', array(
+		return View::make('conferencer::partials.talk-youtube', array(
 			'talk' => $this
 		));
 	}

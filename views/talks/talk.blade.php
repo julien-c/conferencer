@@ -8,7 +8,7 @@
 
 @section('container-before')
 	<nav class="timeline timeline--small flexbox--last">
-		@include('partials.timeline-controls')
+		@include('conferencer::partials.timeline-controls')
 		<ul class="timeline__container">
 			@foreach($talk->relatedTalks() as $relatedTalk)
 				@if ($relatedTalk->from == $talk->from)

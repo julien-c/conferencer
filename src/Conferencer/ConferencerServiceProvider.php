@@ -56,7 +56,7 @@ class ConferencerServiceProvider extends ServiceProvider
 			$view = preg_replace($pattern, $replace, $view);
 			$view = str_replace("@else".PHP_EOL."@include('", "@else".PHP_EOL."@include('conferencer::", $view);
 
-				return $view;
+			return $view;
 		});
 	}
 

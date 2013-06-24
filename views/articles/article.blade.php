@@ -8,7 +8,7 @@
 	<p>&laquo; {{ HTML::linkAction('Conferencer\Controllers\ArticlesController@getIndex', 'Back to articles') }}</p>
 
 	<nav class="timeline timeline--small flexbox--last">
-		@include('partials.timeline-controls')
+		@include('conferencer::partials.timeline-controls')
 		<ul class="timeline__container">
 			@foreach ($articles as $timelineArticle)
 				@if ($timelineArticle->id == $article->id)

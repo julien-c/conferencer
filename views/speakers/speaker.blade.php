@@ -15,11 +15,6 @@
 @stop
 
 @section('aside')
-	<!-- <section>
-		<h2>Quotes</h2>
-		<blockquote>{{ App::make('faker')->sentence }}</blockquote>
-	</section> -->
-
 	@if (!$speaker->relatedSpeakers()->isEmpty())
 		<section class="speaker__related-speakers">
 			<h2>Related speakers</h2>
@@ -71,7 +66,7 @@
 @section('container-after')
 	<h2 style="clear: both">Related talks</h2>
 	@if (!$speaker->talks->isEmpty())
-		@include('partials.talks', array('talks' => $speaker->talks))
+		@include('conferencer::partials.talks', array('talks' => $speaker->talks))
 	@else
 		<p class="color-mute">
 			This speaker doesn't have any talks

@@ -1,4 +1,4 @@
-@extends('layouts.global')
+@extends('conferencer::layouts.global')
 
 @section('title')
 	Administration -

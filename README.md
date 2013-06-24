@@ -2,9 +2,15 @@
 
 ## How to setup
 
+### Manually
+
 ```php
 'providers' => array(
 	'Conferencer\ConferencerServiceProvider',
+),
+
+'aliases' => array(
+	'Former' => 'Former\Facades\Illuminate',
 ),
 ```
 
@@ -14,6 +20,12 @@ artisan config:publish anahkiasen/conferencer
 artisan asset:publish anahkiasen/conferencer
 ```
 
-## Expectations
+### With Package Installer
 
-- A global `layouts/layout` with **title** and **layout** hooks for the Conferencer layouts to extend
+```
+artisan package:install anahkiasen/conferencer
+artisan config:publish anahkiasen/conferencer
+artisan asset:publish anahkiasen/conferencer
+```
+
+## Expectations

@@ -8,7 +8,7 @@ $font-main : "proxima-nova", Helvetica, Arial, sans-serif;
 
 // Imports---------------------------------------------------------- /
 
-@import "reset";
-@import "scaffolding";
-@import "layout";
-@import "modules";
+@import "admin/reset";
+@import "admin/scaffolding";
+@import "admin/layout";
+@import "admin/modules";

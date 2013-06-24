@@ -1,0 +1,67 @@
+// Properties patterns
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Appearance
+//////////////////////////////////////////////////////////////////////
+
+// %block-rounded
+//
+// Rounds a block
+
+%block-rounded {
+	@include border-radius(.25rem);
+	overflow: hidden;
+}
+
+// %inner-shadow
+//
+// Adds an inner shadow in the block
+
+%inner-shadow {
+	overflow: hidden;
+	position: relative;
+	&:before {
+		content: '';
+		@include opacity(.75);
+		width: 100%;
+		@include rem(height, 2rem);
+		position: absolute;
+		bottom: 0;
+		background-image: image-url('inner-shadow.png');
+		background-position: center bottom;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+}
+
+// %transition {
+//
+// Add transitions to a block
+
+%transition {
+	@include transition($transition-time all);
+}
+
+// Resets
+//////////////////////////////////////////////////////////////////////
+
+// %reset-margins
+//
+// Removes margin from a block
+
+%reset-margins {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+
+// %reset-list
+//
+// Make a list look bare
+
+%reset-list {
+	@extend %reset-margins;
+	list-style-type: none;
+}

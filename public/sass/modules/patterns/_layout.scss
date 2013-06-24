@@ -1,0 +1,47 @@
+// Layout
+//
+// Various layout-related modules
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// %container
+//
+// A grid container, holds 12 columns
+
+%container {
+	@include container;
+}
+
+// %container-wide
+//
+// A grid container, with no padding, spanning 100%
+
+%container-wide {
+	@extend %container;
+	padding: 0;
+	max-width: 100%;
+}
+
+// %border-box
+//
+// Applies border-box to a block
+
+%border-box {
+	@include box-sizing(border-box);
+}
+
+// %relative-position
+//
+// Makes the element have a relative position
+
+%relative-position {
+	position: relative;
+}
+
+// %clearfix-position
+//
+// Placeholder to easily switch clearfix implementation
+
+%clearfix {
+	@include legacy-pie-clearfix;
+}

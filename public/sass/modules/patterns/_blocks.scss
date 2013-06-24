@@ -1,0 +1,27 @@
+// Block patterns
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// %inline-list
+//
+// A list made inline (inline-block)
+
+%inline-list {
+	@extend %reset-margins;
+
+	li {
+		@include inline-block;
+		@include rem(margin-right, 1rem);
+	}
+
+	html.no-lastchild & li {
+		display: inline;
+	}
+}
+
+.float--left {
+	float: left;
+	@include rem(margin-right, 1rem);
+	@include rem(margin-bottom, .5rem);
+}

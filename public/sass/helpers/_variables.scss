@@ -1,0 +1,36 @@
+// Variables
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Fonts ----------------------------------------------------------- /
+
+$font-serif : "trajan-pro-3", "Drois Serif", Garamond, Times, serif !default;
+$font-sans  : "proxima-nova", "Open Sans", Helvetica, Arial, sans-serif !default;
+
+$font-main  : $font-sans !default;
+
+// Colors ---------------------------------------------------------- /
+
+$color-grey                 : grey(85);
+$color-grey--dark           : grey(30);
+$color-red                  : hsl(360, 85%, 60%);
+
+// Breakpoints ----------------------------------------------------- /
+
+$wider                      : 90em;
+$wide                       : 75em;
+$desktop                    : 60em;
+$tablet                     : 50em;
+$mobile                     : 30em;
+$mini                       : 20em;
+
+// Compass configuration ------------------------------------------- /
+
+$transition-time            : .3s;
+$flex-legacy-enabled        : false;
+$legacy-support-for-mozilla : false;
+$legacy-support-for-ie      : true;
+$legacy-support-for-ie6     : false;
+$legacy-support-for-ie7     : false;
+$legacy-support-for-ie8     : true;

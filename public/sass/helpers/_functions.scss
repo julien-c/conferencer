@@ -1,0 +1,49 @@
+// Functions
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// @fade
+//
+// Fades a color
+//
+// <dl class="dl-horizontal">
+//   <dt>$color</dt><dd>The color to fade</dd>
+//   <dt>$opacity</dt><dd>The opacity to fade it to (base 100)</dd>
+// </dl>
+
+@function fade($color, $opacity) {
+	@return rgba($color, $opacity / 100);
+}
+
+// @grey
+//
+// Generates a saturation-0 color from black to white
+//
+// <dl class="dl-horizontal">
+//   <dt>$lightness</dt><dd>The % of lightness to add to black</dd>
+// </dl>
+
+@function grey($lightness) {
+	@return lighten(black, $lightness);
+}
+
+// @key and @value
+//
+// Helpers to handle associative lists in Sass
+//
+// <pre>
+//   $hash: 1 foo, 2 bar;
+//   @each $item in $hash {
+//     $key   : key($item);
+//     $value : value($item);
+//   }
+// </pre>
+
+@function key($element) {
+	@return nth($element, 1);
+}
+
+@function value($element) {
+	@return nth($element, 2);
+}

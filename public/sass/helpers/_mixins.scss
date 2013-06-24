@@ -1,0 +1,143 @@
+// Mixins
+//
+// Helper mixins
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// @font-size
+//
+// Alias for the lengthy 'adjust-font-size-to'
+//
+// <dl class="dl-horizontal">
+//   <dt>$font-size</dt><dd>The font-size to set `font-size` and `line-height` to</dd>
+// </dl>
+
+@mixin font-size($font-size) {
+	@include adjust-font-size-to($font-size);
+}
+
+// @arrow
+//
+// Generates an arrow on a block
+//
+// <dl class="dl-horizontal">
+//   <dt>$direction</dt><dd>The direction of the arrow</dd>
+//   <dt>$size `0.5rem`</dt><dd>The size of the arrow</dd>
+//   <dt>$color `$color-mute`</dt><dd>Its colors</dd>
+// </dl>
+
+@mixin arrow($direction, $size: 0.5rem, $color: $color-grey) {
+	$offset: $size * -2;
+	$border-direction: opposite-position($direction);
+	$offset-direction: if($direction == bottom, left, top);
+	@extend %relative-position;
+
+	&:before, &:after {
+		content: ' ';
+		position: absolute;
+		width: 0;
+		height: 0;
+		#{$offset-direction}: 46%;
+		#{$direction}: $offset;
+	}
+	&:before {
+		border: ($size + ($size * 0.05)) solid transparent;
+		border-#{$border-direction}-color: grey(75);
+		#{$direction}: $offset * 1.05;
+	}
+	&:after {
+		border: $size solid transparent;
+		border-#{$border-direction}-color: white;
+	}
+}
+
+// @selection
+//
+// Apply styling to the user's selection
+
+@mixin selection {
+	::-moz-selection {
+		@content;
+	}
+	::selection {
+		@content;
+	}
+}
+
+// @block-image
+//
+// Creates an image from a block
+//
+// <dl class="dl-horizontal">
+//   <dt>$image</dt><dd>Name of the image</dd>
+// </dl>
+
+@mixin block-image($image) {
+	content: '';
+	background: image-url($image);
+	width: image-width($image);
+	height: image-height($image);
+}
+
+// @linear-gradient
+//
+// Classic linear gradient
+//
+// <dl class="dl-horizontal">
+//   <dt>$font-size</dt><dd>The font-size to set `font-size` and `line-height` to</dd>
+// </dl>
+
+@mixin linear-gradient($from, $to) {
+	background-color: mix($from, $to);
+	@include background-image(linear-gradient(top, $from, $to));
+}
+
+// Responsive mixins
+//////////////////////////////////////////////////////////////////////
+
+// @per-row
+//
+// Creates a grid with X items per row. To be applied on the
+// items to distribute ; the containers of said items must extend
+// the `%container` placeholder
+//
+// <dl class="dl-horizontal">
+//   <dt>$number</dt><dd>Number of items per row</dd>
+// </dl>
+
+@mixin per-row($number, $gutter: nil) {
+	$old-gutter-width: $gutter-width;
+	@if $gutter != nil {
+		$gutter-width: $gutter;
+	}
+
+	@include span-columns($total-columns / $number);
+	@include nth-omega(#{$number}n);
+
+	$gutter-width: $old-gutter-width;
+}
+
+// @reset-grid
+//
+// Resets a block's grid and set it to full-width
+@mixin reset-grid {
+	@include reset-columns;
+	width: 100%;
+}
+
+@mixin from-to($from, $to) {
+	@include at-breakpoint($from $total-columns $to) {
+		@content;
+	}
+}
+
+@mixin to($to) {
+	@include at-breakpoint(0 $total-columns $to) {
+		@content;
+	}
+}
+
+@mixin from($from) {
+	@include at-breakpoint($from $total-columns) {
+		@content};
+	}

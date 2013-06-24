@@ -82,7 +82,7 @@ class TalksController extends BaseController
 		$cacheTime = 60 * 24 * 30; // A month
 		$year      = TalkRepository::sanitizeYear($year);
 
-		$output = App::make('path.public').'/app/pdf/monaco-media-forum-program-' .$year. '.pdf';
+		$output = App::make('path.public').'/app/pdf/'.Config::get('conferencer::pdfs').'-' .$year. '.pdf';
 
 		Cache::remember('program-'.$year, $cacheTime, function() use($year, $output) {
 

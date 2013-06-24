@@ -1,19 +1,18 @@
 {
-  "providers": [
+	"providers": [
 		"Basset\BassetServiceProvider",
 		"Former\FormerServiceProvider",
-		"Profiler\ProfilerServiceProvider",
 		"Illuminage\IlluminageServiceProvider",
-    "Conferencer\ConferencerServiceProvider"
-  ],
-  "aliases": [
-    {
-      "alias": "Basset",
-      "facade": "Basset\Facade"
-    },
-    {
-      "alias": "Former",
-      "facade": "Former\Facades\Illuminate"
-    }
-  ]
+		"Conferencer\ConferencerServiceProvider"
+	],
+	"aliases": [
+		{
+			"alias": "Basset",
+			"facade": "Basset\Facade"
+		},
+		{
+			"alias": "Former",
+			"facade": "Former\Facades\Illuminate"
+		}
+	]
 }

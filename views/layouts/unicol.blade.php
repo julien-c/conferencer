@@ -2,7 +2,7 @@
 
 @section('layout')
 	<nav class="layout-navigation layout-navigation--small">
-		@if (View::exists('partials.footer'))
+		@if (View::exists('layouts.partials.footer'))
 			@include('layouts.partials.navigation')
 		@else
 			@include('conferencer::layouts.partials.navigation')
@@ -17,7 +17,7 @@
 		@yield('container-after')
 	</section>
 
-	@if (View::exists('partials.footer'))
+	@if (View::exists('layouts.partials.footer'))
 		@include('layouts.partials.footer')
 	@else
 		@include('conferencer::layouts.partials.footer')

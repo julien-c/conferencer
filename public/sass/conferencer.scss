@@ -1,27 +1,4 @@
-
-// Frameworks
-//
-//////////////////////////////////////////////////////////////////////
-
-@import "compass";
-@import "susy";
-
-// Helpers
-//
-//////////////////////////////////////////////////////////////////////
-
-@import "helpers/functions";
-@import "helpers/variables";
-@import "helpers/mixins";
-
-// Patterns
-//
-//////////////////////////////////////////////////////////////////////
-
-@import "modules/patterns/properties";
-@import "modules/patterns/layout";
-@import "modules/patterns/blocks";
-@import "modules/patterns/typography";
+@import "common";
 
 // Scaffolding
 //
@@ -29,3 +6,7 @@
 
 @import "scaffolding/scaffolding";
 @import "scaffolding/typography";
+
+// Layout
+//
+//////////////////////////////////////////////////////////////////////

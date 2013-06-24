@@ -1,0 +1,65 @@
+// Main container and inner grid
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+.layout-container {
+	@extend %container;
+	overflow: hidden;
+	position: relative;
+	@include rem(padding, 2rem);
+	@include rem(margin-bottom, 10rem);
+
+	@include to($desktop) {
+		@include rem(padding, 1rem);
+	}
+	@include from($desktop) {
+		width: 80%;
+		@include rem(max-width, 80rem);
+	}
+
+	&.layout-container--talk {
+		.layout-aside {
+			@include span-columns(5);
+			& + .layout-content {
+				@include span-columns(7 omega);
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.layout-aside {
+	@include span-columns(4);
+	@include rem(margin-bottom, 2rem);
+
+	@include to($desktop) {
+		@include reset-columns;
+		width: 100%;
+	}
+}
+
+.layout-aside + .layout-content {
+	@include span-columns(8 omega);
+	@include rem(margin-bottom, 2rem);
+
+	@include to($desktop) {
+		@include reset-columns;
+	}
+}
+
+@include to($desktop) {
+	.layout-content, .layout-container {
+		@include display-flex;
+		@include flex-direction(column);
+
+		.flexbox--first {
+			display: block;
+			@include order(1);
+		}
+		.flexbox--last {
+			display: block;
+			@include order(2);
+		}
+	}
+}

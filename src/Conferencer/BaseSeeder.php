@@ -1,6 +1,8 @@
 <?php
 namespace Conferencer;
 
+use Cache;
+use File;
 use Seeder;
 use Symfony\Component\DomCrawler\Crawler;
 

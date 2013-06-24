@@ -22,7 +22,7 @@ class ConferencerServiceProvider extends ServiceProvider
 	public function register()
 	{
 		// Register config file
-		$this->app['config']->package('anahkiasen/conferencer', __DIR__.'/../../config');
+		$this->app['config']->package('anahkiasen/conferencer', __DIR__.'/../config');
 
 		// Register views
 		$this->app['view']->addNamespace('conferencer', __DIR__.'/../../views');

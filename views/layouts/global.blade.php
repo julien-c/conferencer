@@ -15,7 +15,6 @@
 <body class="@yield('classes')">
 	<div class="layout-footer__wrapper">
 		@yield('layout')
-		@include('partials.footer')
 	</div>
 
 	@if ($typekit)

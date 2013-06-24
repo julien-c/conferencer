@@ -7,6 +7,7 @@ use Cache;
 use Conferencer\Models\Tag;
 use Conferencer\Models\Talk\Repository as TalkRepository;
 use Conferencer\Models\Talk\Services as TalkServices;
+use Config;
 use File;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Request;
@@ -113,9 +114,11 @@ class TalksController extends BaseController
 	 */
 	public function getTalk($talkSlug)
 	{
-		$talk = Talk::slugOrFail($talkSlug);
+		$talk   = Talk::slugOrFail($talkSlug);
+		$flickr = Config::get('conferencer::accounts.flickr');
 
 		return View::make('conferencer::talks.talk')
+			->with('flickr', $flickr)
 			->with('talk', $talk);
 	}
 

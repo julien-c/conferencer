@@ -6,4 +6,9 @@
 	// The name of the generated PDFs
 	'pdfs' => '',
 
+	// Accounts
+	'accounts' => array(
+		'flickr' => 'monacomediaforum',
+	),
+
 );

@@ -98,10 +98,10 @@
 		@if ($talk->flickr)
 			<div class="talk__medias__flickr">
 				<object width="700" height="525">
-					<param name="flashvars" value="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Fmonacomediaforum%2Fsets%2F{{ $talk->flickr }}%2Fshow%2F&page_show_back_url=%2Fphotos%2Fmonacomediaforum%2Fsets%2F{{ $talk->flickr }}%2F&set_id={{ $talk->flickr }}&jump_to="></param>
+					<param name="flashvars" value="offsite=true&lang=en-us&page_show_url=%2Fphotos%2F{{ $flickr }}%2Fsets%2F{{ $talk->flickr }}%2Fshow%2F&page_show_back_url=%2Fphotos%2F{{ $flickr }}%2Fsets%2F{{ $talk->flickr }}%2F&set_id={{ $talk->flickr }}&jump_to="></param>
 					<param name="movie" value="http://www.flickr.com/apps/slideshow/show.swf?v=124984"></param>
 					<param name="allowFullScreen" value="true"></param>
-					<embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=124984" allowFullScreen="true" flashvars="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Fmonacomediaforum%2Fsets%2F{{ $talk->flickr }}%2Fshow%2F&page_show_back_url=%2Fphotos%2Fmonacomediaforum%2Fsets%2F{{ $talk->flickr }}%2F&set_id={{ $talk->flickr }}&jump_to=" width="700" height="525"></embed>
+					<embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=124984" allowFullScreen="true" flashvars="offsite=true&lang=en-us&page_show_url=%2Fphotos%2F{{ $flickr }}%2Fsets%2F{{ $talk->flickr }}%2Fshow%2F&page_show_back_url=%2Fphotos%2F{{ $flickr }}%2Fsets%2F{{ $talk->flickr }}%2F&set_id={{ $talk->flickr }}&jump_to=" width="700" height="525"></embed>
 				</object>
 			</div>
 		@endif

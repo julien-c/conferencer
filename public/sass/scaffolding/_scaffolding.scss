@@ -1,0 +1,28 @@
+// Scaffolding
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+@include establish-baseline(16px);
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+html {
+	@include to($tablet) { font-size: 90% }
+}
+
+@include selection {
+	background-color: $color-accent;
+	color: white;
+}
+
+body {
+	color: $color-grey--dark;
+	background-color: grey(95);
+	@extend %font-main;
+}

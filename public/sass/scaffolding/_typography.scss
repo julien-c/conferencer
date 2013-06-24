@@ -1,0 +1,42 @@
+// Typographic scaffolding
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Headings -------------------------------------------------------- /
+
+#{headings()} {
+	@extend %font-heading;
+	clear: both;
+	line-height: 1.5;
+}
+
+// Links ----------------------------------------------------------- /
+
+a {
+	color: $color-red;
+	text-decoration: none;
+}
+
+p a:hover {
+	text-decoration: underline;
+}
+
+.icon-plus {
+	font-size: .75em;
+	color: black;
+}
+
+// Alignement ------------------------------------------------------ /
+
+.wysiwyg-text-align-left {
+	text-align: left;
+}
+
+.wysiwyg-text-align-center {
+	text-align: center;
+}
+
+.wysiwyg-text-align-right {
+	text-align: right;
+}

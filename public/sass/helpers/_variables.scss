@@ -5,16 +5,19 @@
 
 // Fonts ----------------------------------------------------------- /
 
-$font-serif : "trajan-pro-3", "Drois Serif", Garamond, Times, serif !default;
-$font-sans  : "proxima-nova", "Open Sans", Helvetica, Arial, sans-serif !default;
+$font-serif                 : "trajan-pro-3", "Drois Serif", Garamond, Times, serif !default;
+$font-sans                  : "proxima-nova", "Open Sans", Helvetica, Arial, sans-serif !default;
 
-$font-main  : $font-sans !default;
+$font-main                  : $font-sans !default;
+$font-headings              : $font-main !default;
 
 // Colors ---------------------------------------------------------- /
 
 $color-grey                 : grey(85);
 $color-grey--dark           : grey(30);
 $color-red                  : hsl(360, 85%, 60%);
+
+$color-accent               : $color-red;
 
 // Breakpoints ----------------------------------------------------- /
 

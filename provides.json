@@ -1,5 +1,9 @@
 {
   "providers": [
+		"Basset\BassetServiceProvider",
+		"Former\FormerServiceProvider",
+		"Profiler\ProfilerServiceProvider",
+		"Illuminage\IlluminageServiceProvider",
     "Conferencer\ConferencerServiceProvider"
   ],
   "aliases": [

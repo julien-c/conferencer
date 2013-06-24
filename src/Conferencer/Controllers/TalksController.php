@@ -30,7 +30,7 @@ class TalksController extends BaseController
 			foreach ($talks as $key => $talk) {
 				if ($key == 0) $response .= '<article class="item active">';
 				elseif ($key % 8 == 0) $response .= '</article><article class="item">';
-				$response .= View::make('partials.grid-talk', compact('talk'));
+				$response .= View::make('conferencer::partials.grid-talk', compact('talk'));
 			}
 
 			return $response.'</article>';

@@ -22,6 +22,6 @@
 
 @section('content')
 	<div class="filters__results grid-speakers">
-		@each('partials.grid-speaker', $speakers, 'speaker')
+		@each('conferencer::partials.grid-speaker', $speakers, 'speaker')
 	</div>
 @stop

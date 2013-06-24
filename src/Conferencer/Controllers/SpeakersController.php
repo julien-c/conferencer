@@ -21,7 +21,7 @@ class SpeakersController extends BaseController
 		if (Request::ajax()) {
 			$response = null;
 			foreach ($speakers as $speaker) {
-				$response .= View::make('partials.grid-speaker', compact('speaker'));
+				$response .= View::make('conferencer::partials.grid-speaker', compact('speaker'));
 			}
 
 			return $response;

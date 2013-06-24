@@ -77,7 +77,7 @@
 	<section class="talk">
 		<main class="talk__content">
 			<div class="grid-speakers">
-				@each('partials.grid-speaker', $talk->speakers, 'speaker')
+				@each('conferencer::partials.grid-speaker', $talk->speakers, 'speaker')
 			</div>
 			@if (!$talk->tags->isEmpty())
 				<h3>Tags</h3>

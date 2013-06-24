@@ -1,7 +1,6 @@
 <?php
 
 View::composer('conferencer::layouts.global', function($view) {
-	$view->title   = Config::get('conferencer::name');
 	$view->typekit = Config::get('conferencer::typekit');
 });
 

@@ -2,6 +2,7 @@
 namespace Conferencer\Controllers;
 
 use BaseController;
+use Conferencer\Conferencer;
 use Conferencer\Models\Speaker;
 use Conferencer\Models\Speaker\Services as SpeakerServices;
 use Request;
@@ -21,13 +22,13 @@ class SpeakersController extends BaseController
 		if (Request::ajax()) {
 			$response = null;
 			foreach ($speakers as $speaker) {
-				$response .= View::make('conferencer::partials.grid-speaker', compact('speaker'));
+				$response .= Conferencer::viewMake('partials.grid-speaker', compact('speaker'));
 			}
 
 			return $response;
 		}
 
-		return View::make('conferencer::speakers.speakers')
+		return Conferencer::viewMake('speakers.speakers')
 			->with('speakers', $speakers);
 	}
 
@@ -41,7 +42,7 @@ class SpeakersController extends BaseController
 		$speaker = Speaker::slugOrFail($speakerSlug);
 		$speaker->load('talks', 'talks.tags');
 
-		return View::make('conferencer::speakers.speaker')
+		return Conferencer::viewMake('speakers.speaker')
 			->with('speaker', $speaker);
 	}
 

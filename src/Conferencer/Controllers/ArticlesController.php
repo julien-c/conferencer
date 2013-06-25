@@ -1,9 +1,10 @@
 <?php
 namespace Conferencer\Controllers;
 
+use BaseController;
+use Conferencer\Conferencer;
 use Conferencer\Models\Article;
 use Conferencer\Models\Article\Repository as ArticleRepository;
-use BaseController;
 use View;
 
 class ArticlesController extends BaseController
@@ -17,7 +18,7 @@ class ArticlesController extends BaseController
 		$articles = Article::orderBy('created_at', 'desc')->get();
 		$calendar = ArticleRepository::getCalendar();
 
-		return View::make('conferencer::articles.articles')
+		return Conferencer::viewMake('articles.articles')
 			->with('calendar', $calendar)
 			->with('articles', $articles);
 	}
@@ -31,7 +32,7 @@ class ArticlesController extends BaseController
 	{
 		$articles = Article::where('created_at', 'LIKE', $date.'%')->get();
 
-		return View::make('conferencer::articles.articles')
+		return Conferencer::viewMake('articles.articles')
 			->with('thisDate', $date)
 			->with('articles', $articles);
 	}
@@ -46,7 +47,7 @@ class ArticlesController extends BaseController
 		$articles = Article::orderBy('created_at', 'asc')->get();
 		$article  = Article::slugOrFail($articleSlug);
 
-		return View::make('conferencer::articles.article')
+		return Conferencer::viewMake('articles.article')
 			->with('articles', $articles)
 			->with('article', $article);
 	}

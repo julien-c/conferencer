@@ -4,6 +4,7 @@ namespace Conferencer\Controllers;
 use App;
 use BaseController;
 use Cache;
+use Conferencer\Conferencer;
 use Conferencer\Models\Tag;
 use Conferencer\Models\Talk;
 use Conferencer\Models\Talk\Repository as TalkRepository;
@@ -30,13 +31,13 @@ class TalksController extends BaseController
 			foreach ($talks as $key => $talk) {
 				if ($key == 0) $response .= '<article class="item active">';
 				elseif ($key % 8 == 0) $response .= '</article><article class="item">';
-				$response .= View::make('conferencer::partials.grid-talk', compact('talk'));
+				$response .= Conferencer::viewMake('partials.grid-talk', compact('talk'));
 			}
 
 			return $response.'</article>';
 		}
 
-		return View::make('conferencer::results')
+		return Conferencer::viewMake('results')
 			->with('talks', $talks);
 	}
 
@@ -93,7 +94,7 @@ class TalksController extends BaseController
 
 			// Create view
 			$talks   = Talk::whereYear($year)->orderBy('from', 'ASC')->get();
-			$program = View::make('conferencer::talks.program-pdf')
+			$program = Conferencer::viewMake('talks.program-pdf')
 				->with('talks', $talks)
 				->with('year', $year);
 
@@ -117,7 +118,7 @@ class TalksController extends BaseController
 		$talk   = Talk::slugOrFail($talkSlug);
 		$flickr = Config::get('conferencer::accounts.flickr');
 
-		return View::make('conferencer::talks.talk')
+		return Conferencer::viewMake('talks.talk')
 			->with('flickr', $flickr)
 			->with('talk', $talk);
 	}
@@ -135,7 +136,7 @@ class TalksController extends BaseController
 		$talks    = $tag->talks;
 		$speakers = $tag->speakers();
 
-		return View::make('conferencer::results')
+		return Conferencer::viewMake('results')
 			->with('talks', $talks)
 			->with('speakers', $speakers)
 			->with('tag', $tag);

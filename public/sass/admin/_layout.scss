@@ -6,9 +6,7 @@
 // Container ------------------------------------------------------- /
 
 .layout-container--admin {
-	@include rem(padding-left, 4rem);
-	@include rem(padding-right, 4rem);
-	@include rem(padding-top, 2rem);
+	@include rem(padding, 2rem 4rem);
 	@include box-sizing(border-box);
 	background-color: rgba(white, .85);
 	margin: auto;

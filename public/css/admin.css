@@ -39,7 +39,7 @@ body {
   font-family: "proxima-nova", Helvetica, Arial, sans-serif; }
 
 body {
-  background: url('../img/shattered.png?1372149915'); }
+  background: url('../img/shattered.png?1372164073'); }
 
 a {
   color: #f04242; }
@@ -64,12 +64,8 @@ input[type="password"] {
   box-sizing: content-box; }
 
 .layout-container--admin {
-  padding-left: 64px;
-  padding-left: 4rem;
-  padding-right: 64px;
-  padding-right: 4rem;
-  padding-top: 32px;
-  padding-top: 2rem;
+  padding: 32px 64px;
+  padding: 2rem 4rem;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

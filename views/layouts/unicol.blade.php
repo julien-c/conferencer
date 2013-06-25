@@ -2,11 +2,7 @@
 
 @section('layout')
 	<nav class="layout-navigation layout-navigation--small">
-		@if (View::exists('layouts.partials.footer'))
-			@include('layouts.partials.navigation')
-		@else
-			@include('conferencer::layouts.partials.navigation')
-		@endif
+		@includeFallback('layouts.partials.navigation')
 	</nav>
 
 	<section class="layout-container @yield('container-classes')">
@@ -17,9 +13,5 @@
 		@yield('container-after')
 	</section>
 
-	@if (View::exists('layouts.partials.footer'))
-		@include('layouts.partials.footer')
-	@else
-		@include('conferencer::layouts.partials.footer')
-	@endif
+	@includeFallback('layouts.partials.footer')
 @stop

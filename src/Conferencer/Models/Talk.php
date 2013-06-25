@@ -5,6 +5,9 @@ use Cache;
 use File;
 use View;
 
+/**
+ * A Talk at the conference
+ */
 class Talk extends BaseModel
 {
 

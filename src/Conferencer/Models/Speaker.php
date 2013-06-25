@@ -1,9 +1,12 @@
 <?php
 namespace Conferencer\Models;
 
-use Illuminate\Support\Collection;
 use DB;
+use Illuminate\Support\Collection;
 
+/**
+ * A Speaker at one of the Talks
+ */
 class Speaker extends BaseModel
 {
 

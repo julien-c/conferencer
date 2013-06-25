@@ -6,6 +6,9 @@ use File;
 use Seeder;
 use Symfony\Component\DomCrawler\Crawler;
 
+/**
+ * A base Seeder with extra helpers
+ */
 abstract class BaseSeeder extends Seeder
 {
 

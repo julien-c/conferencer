@@ -3,6 +3,9 @@ namespace Conferencer\Models;
 
 use Illuminate\Support\Collection;
 
+/**
+ * A Tag to categorize the different talks
+ */
 class Tag extends BaseModel
 {
 

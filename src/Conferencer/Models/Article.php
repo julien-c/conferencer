@@ -1,6 +1,9 @@
 <?php
 namespace Conferencer\Models;
 
+/**
+ * A news article
+ */
 class Article extends BaseModel
 {
 

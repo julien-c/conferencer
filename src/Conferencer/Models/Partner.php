@@ -1,6 +1,9 @@
 <?php
 namespace Conferencer\Models;
 
+/**
+ * A partner or sponsor for the conferencer
+ */
 class Partner extends BaseModel
 {
 

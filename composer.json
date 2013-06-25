@@ -13,7 +13,8 @@
 		"illuminate/support": "4.1.x",
 		"anahkiasen/illuminage": "dev-master",
 		"anahkiasen/former": "dev-agnostic",
-		"jasonlewis/basset": "dev-master"
+		"jasonlewis/basset": "dev-master",
+		"ensepar/html2pdf": "dev-master"
 	},
 	"autoload": {
 		"psr-0": {

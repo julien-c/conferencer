@@ -6,6 +6,11 @@ use Conferencer\Models\Article;
 class Repository
 {
 
+	/**
+	 * Get a calendar of the available Articles
+	 *
+	 * @return array
+	 */
 	public static function getCalendar()
 	{
 		$articles = Article::orderBy('created_at', 'asc')->get();

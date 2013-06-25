@@ -1,6 +1,8 @@
 <?php
 namespace Conferencer;
 
+use View;
+
 class Conferencer
 {
 
@@ -9,7 +11,7 @@ class Conferencer
 	 *
 	 * @var array
 	 */
-	protected $overwittenViews;
+	protected static $overwittenViews = array();
 
 	/**
 	 * Returns a Conferencer view, or the User's if overwritten
@@ -20,13 +22,13 @@ class Conferencer
 	 *
 	 * @return \Illuminate\View\View
 	 */
-	public function viewMake($view, $data = array(), $mergeData = array())
+	public static function viewMake($view, $data = array(), $mergeData = array())
 	{
-		if (!array_key_exists($view, $this->overwittenViews)) {
-			$this->overwittenViews[$view] = View::exists($view) ? $view : 'conferencer::'.$view;
+		if (!array_key_exists($view, static::$overwittenViews)) {
+			static::$overwittenViews[$view] = View::exists($view) ? $view : 'conferencer::'.$view;
 		}
 
-		return View::make($this->overwittenViews[$view], $data, $mergeData);
+		return View::make(static::$overwittenViews[$view], $data, $mergeData);
 	}
 
 }

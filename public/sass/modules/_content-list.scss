@@ -1,0 +1,181 @@
+// Content block
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+.content-block {
+	@extend %container-wide;
+	clear: both;
+}
+
+// Content list
+//
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+$time-width:  3;
+$image-width: 2;
+
+.content-list {
+	padding: 0;
+
+	a {
+	}
+
+	.block-title:first-child {
+		margin-top: 0;
+	}
+}
+
+.content-list__empty {
+	display: none;
+}
+
+// Items ----------------------------------------------------------- /
+
+.content-list__item__time,
+.content-list__item__image,
+.content-list__item__description {
+	@extend %border-box;
+	@include rem(padding, 1rem);
+	padding-right: 0;
+}
+
+.content-list__item {
+	@extend .content-block;
+	@include transition(background $transition-time);
+	border-bottom: 1px dashed fade(black, 50);
+	max-width: 100%;
+	padding: 0;
+
+	.tags {
+		@include rem(margin-top, 1rem);
+		.tag {
+			@include rem(font-size, .75rem);
+			@include rem(margin-right, .25rem);
+			@include rem(margin-top, .25rem);
+			@include rem(padding, .25rem .5rem);
+			max-width: 50%;
+		}
+	}
+
+	&.content-list__item--unicol .content-list__item__description {
+		@include reset-columns;
+		@include rem(padding, 1rem);
+	}
+	&:hover {
+		@include linear-gradient(white, grey(95));
+	}
+}
+
+// Content --------------------------------------------------------- /
+
+.content-list__item__time {
+	@include rem(font-size, 1.25rem);
+	display: block;
+
+	@include from-to($desktop, $wider) {
+		@include span-columns($time-width);
+	}
+	@include from($wider) {
+		@include span-columns($time-width - 1);
+	}
+
+	time {
+		@extend %font-size-normal;
+		display: block;
+	}
+}
+
+.content-list__item__image {
+	overflow: hidden;
+
+	img {
+		min-width: 100%;
+	}
+
+	@include from($desktop) {
+		@include span-columns($image-width);
+	}
+
+	& + .content-list__item__description {
+		@include from-to($desktop, $wider) {
+			@include span-columns(($total-columns - $image-width - $time-width) omega);
+		}
+		@include from($wider) {
+			@include span-columns(($total-columns - $image-width - $time-width + 1) omega);
+		}
+	}
+}
+
+.content-list__item__description {
+	@include rem(padding, 1rem 0);
+
+	@include from($desktop) {
+		@include span-columns(($total-columns - $time-width) omega);
+	}
+
+	p {
+		@include rem(padding-right, 1rem);
+		&:last-child { margin-bottom: 0 }
+	}
+}
+
+// Titles ---------------------------------------------------------- /
+
+.content-list__item__title {
+	@extend %reset-margins;
+	@extend %font-main;
+	@include rem(font-size, 1.25rem);
+
+	a {
+		&:hover {
+		}
+	}
+	small {
+		display: block;
+		@include rem(padding-top, .5rem);
+	}
+}
+
+// Responsive
+//////////////////////////////////////////////////////////////////////
+
+@include from-to($mobile, $desktop) {
+	.articles, .content-list {
+		@include display-flex;
+		@include flex-direction(row);
+		@include flex-wrap(wrap);
+	}
+
+	.content-list__item,
+	.articles > a {
+		@include box-sizing(border-box);
+		@include flex(1 50%);
+		@include rem(padding, .5rem);
+
+		article {
+			@include rem(padding, 1rem);
+			margin: 0;
+		}
+	}
+}
+
+@include to($mobile) {
+	.content-list__item {
+		@include rem(padding, 1rem 0);
+	}
+
+	.content-list__item__time,
+	.content-list__item__description,
+	.content-list__item__image {
+		@include reset-grid;
+		display: block;
+		max-width: 100%;
+		@include rem(padding, 0 1rem 1rem);
+	}
+
+	.content-list__item__description {
+		padding-bottom: 0;
+	}
+}

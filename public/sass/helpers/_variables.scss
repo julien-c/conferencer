@@ -13,27 +13,27 @@ $font-headings              : $font-main !default;
 
 // Colors ---------------------------------------------------------- /
 
-$color-grey                 : grey(85);
-$color-grey--dark           : grey(30);
-$color-red                  : hsl(360, 85%, 60%);
+$color-grey                 : grey(85) !default;
+$color-grey--dark           : grey(30) !default;
+$color-red                  : hsl(360, 85%, 60%) !default;
 
-$color-accent               : $color-red;
+$color-accent               : $color-red !default;
 
 // Breakpoints ----------------------------------------------------- /
 
-$wider                      : 90em;
-$wide                       : 75em;
-$desktop                    : 60em;
-$tablet                     : 50em;
-$mobile                     : 30em;
-$mini                       : 20em;
+$wider                      : 90em !default;
+$wide                       : 75em !default;
+$desktop                    : 60em !default;
+$tablet                     : 50em !default;
+$mobile                     : 30em !default;
+$mini                       : 20em !default;
 
 // Compass configuration ------------------------------------------- /
 
-$transition-time            : .3s;
-$flex-legacy-enabled        : false;
-$legacy-support-for-mozilla : false;
-$legacy-support-for-ie      : true;
-$legacy-support-for-ie6     : false;
-$legacy-support-for-ie7     : false;
-$legacy-support-for-ie8     : true;
+$transition-time            : .3s !default;
+$flex-legacy-enabled        : false !default;
+$legacy-support-for-mozilla : false !default;
+$legacy-support-for-ie      : true !default;
+$legacy-support-for-ie6     : false !default;
+$legacy-support-for-ie7     : false !default;
+$legacy-support-for-ie8     : true !default;

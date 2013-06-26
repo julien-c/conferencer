@@ -24,18 +24,11 @@ class Partner extends BaseModel
 	 */
 	protected $table = 'partners';
 
-	////////////////////////////////////////////////////////////////////
-	///////////////////////////// ATTRIBUTES ///////////////////////////
-	////////////////////////////////////////////////////////////////////
-
 	/**
-	 * Get the Partner's image as a tag
+	 * Path to the Speaker images
 	 *
-	 * @return string
+	 * @var string
 	 */
-	public function getImagePathAttribute()
-	{
-		return 'app/img/partners/'.$this->image;
-	}
+	public static $images = 'app/img/partners/';
 
 }

@@ -42,7 +42,7 @@ Some of the models have Services or Repository classes :
 
 **Articles**
 
-- `Article\Repository::getCalendar` returns a multidimensionnal array of the articles in the form of array[YEAR][MONTH][DAY][ARTICLE]
+- `Article\Repository::getCalendar` returns a multidimensionnal array of the articles in the form of `array[YEAR][MONTH][DAY][ARTICLE]`
 
 **Speakers**
 
@@ -52,7 +52,7 @@ Some of the models have Services or Repository classes :
 
 - `Talk\Services::getFiltered(filter)` is the same thing as above but for Talks
 - `Talk\Repository::forHomepage` returns the Talks that are defined to be on the homepage
-- `Talk\Repository::getProgram(year)` returns an array in the form of array[YEAR-MONTH-DAY][ID][TALK]
+- `Talk\Repository::getProgram(year)` returns an array in the form of `array[YEAR-MONTH-DAY][ID][TALK]`
 - `Talk\Repository::getYears` returns an array of years for which Talks exist
 - `Talk\Repository::getDays(year)` is the same thing as above but for the days of a year
 - `Talk\Repository::sanitizeYear(year)` checks if Talk exist for a year, and if not, return the latest year in the database

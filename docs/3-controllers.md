@@ -23,7 +23,6 @@ Here is a schema of the routes mapped by Conferencer :
 
 | Method   | URI                                            | Name                     | Action                                                      |
 | -------- | ---------------------------------------------- | ------------------------ | ----------------------------------------------------------- |
-| GET      | /                                              |                          | Closure                                                     |
 | GET      | /admin                                         |                          | Conferencer\Controllers\Admin\AdminController@getIndex      |
 | GET      | /admin/articles                                | admin.articles.index     | Conferencer\Controllers\Admin\ArticlesResource@index        |
 | POST     | /admin/articles                                | admin.articles.store     | Conferencer\Controllers\Admin\ArticlesResource@store        |

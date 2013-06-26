@@ -24,7 +24,7 @@ All models share a few common methods and/or attributes :
 - If the model has a _slug_ attribute, it will automatically be set and updated when the _name_ is
 - The dates use Carbon, a DateTime superset, so you can do `$talk->created_at->format('H:i:s')`
 - All models have a static `slugOrFail` helper that matches the `findOrFail` method but with the _slug_
-- Models implement the Illuminage package that allow the creation and caching of thumbnails, `$talk->thumb(200, 300)`
+- Models implement the Illuminage package that allows the creation and caching of thumbnails, `$talk->thumb(200, 300)`
 
 ### Model-specific methods
 
@@ -42,7 +42,7 @@ Some of the models have Services or Repository classes :
 
 **Articles**
 
-- `Article\Repository::getCalendar` returns a multidimensionnal array of the articles in the form of `array[YEAR][MONTH][DAY][ARTICLE]`
+- `Article\Repository::getCalendar` returns a multidimensional array of the articles in the form of `array[YEAR][MONTH][DAY][ARTICLE]`
 
 **Speakers**
 

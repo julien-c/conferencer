@@ -6,7 +6,7 @@ A lot of views are provided by default with Conferencer, there are three kind of
 - Partials
 - Pages
 
-All views can be overriden by the application using Conferencer by simply creating a view of the same name. The package will always look first for an user view, before relying on it's own.
+All views can be overridden by the application using Conferencer by simply creating a view of the same name. The package will always look first for an user view, before relying on it's own.
 
 ## Layouts
 
@@ -42,7 +42,7 @@ A few partials are provided :
 
 ## Pages
 
-Those are pages used by the various routes predefined, and most actually match the route they're presenting. These pages can be overriden as well.
+Those are pages used by the various routes predefined, and most actually match the route they're presenting. These pages can be overridden as well.
 
 - **articles/article**, a single Article
 - **articles/articles**, all Articles
